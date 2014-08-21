@@ -3,9 +3,8 @@
 //
 #include "game.h"
 #include "Framework\console.h"
-#include <iostream>
-#include <iomanip>
-#include <string>
+#include "menu.h"
+#include "global.h"
 
 int life;
 double elapsedTime;
@@ -16,39 +15,11 @@ COORD catLocation;
 COORD catLocation2;
 COORD consoleSize;
 
-enum Sequence 
-{
-	game = 1,
-	options,
-	Exit,
-};
-void gameLoop()
-{
-	std :: cout << "Troll Cat" << std :: endl;
-	std :: cout << "(1)Game" << std :: endl;
-	std :: cout << "(2)Options" << std :: endl;
-	std :: cout << "(3)Exit" << std :: endl;
-	while(1)
-	{
-		int a;
-		std :: cin >> a;
-		if(a == game)
-		{
-			break;
-		}
-		if(a == Exit)
-		{
-			g_quitGame = true;
-			break;
-		}
-
-	}
-}
 
 void init()
 {
 	// Set precision for floating point output
-	std::cout << std::fixed << std::setprecision(1);
+	cout << std::fixed << std::setprecision(1);
 
 	SetConsoleTitle(L"Troll Cat");
 
@@ -254,41 +225,41 @@ void render()
 		{
 			gotoXY(consoleSize.X / 2 + i - 2,consoleSize.Y / 2 - a);
 			colour(colors[i]);
-			std::cout << "*";
+			cout << "*";
 		}
 	}
 
 	// render time taken to calculate this frame
 	gotoXY(40, 0);
 	colour(0x1A);
-	std::cout << "Score: " << (int)elapsedTime << std::endl;
+	cout << "Score: " << (int)elapsedTime << endl;
 
 	gotoXY(0, 0);
 	colour(0x1B);
-	std::cout << "Lives: " << life << std::endl;
+	cout << "Lives: " << life << endl;
 
 	// render character
 	gotoXY(charLocation);
 	colour(0x0C);
 	std::cout << (char)1;
 
-	//render cat
+	//render cat danger zone
 	gotoXY(catLocation);
 	colour(0x0A);
-	std::cout << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << std::endl;
+	cout << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << std::endl;
 	gotoXY(catLocation.X, catLocation.Y + 1);
-	std::cout << (char)1 << "         " << (char)1 << std::endl;
+	cout << (char)1 << "         " << (char)1 << endl;
 	gotoXY(catLocation.X, catLocation.Y + 2);
-	std::cout << (char)1 << "         " << (char)1 << std::endl;
+	cout << (char)1 << "         " << (char)1 << endl;
 	gotoXY(catLocation.X, catLocation.Y + 3);
-	std::cout << (char)1 << "         " << (char)1 << std::endl;
+	cout << (char)1 << "         " << (char)1 << endl;
 	gotoXY(catLocation.X, catLocation.Y + 4);
-	std::cout << (char)1 << "         " << (char)1 << std::endl;
+	cout << (char)1 << "         " << (char)1 << endl;
 	gotoXY(catLocation.X, catLocation.Y + 5);
-	std::cout << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << std::endl;
+	cout << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << (char)1 << endl;
 	
 	/*
-	//consider using pointers to do up the rendering of the cat paws
+	
 	//Small
 	std::cout << char(221) << char(219) << char(222) << std::endl;
 	std::cout << char(219) << char(219) << char(219) << std::endl;

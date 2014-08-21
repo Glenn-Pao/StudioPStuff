@@ -2,6 +2,7 @@
 
 #include "Framework\timer.h"
 #include "game.h"
+#include "menu.h"
 
 
 StopWatch g_timer;            // Timer function to keep track of time and the frame rate
@@ -10,6 +11,7 @@ const unsigned char FPS = 5; // FPS of this game
 const unsigned int frameTime = 1000 / FPS; // time for each frame
 
 void mainLoop();
+void gameLoop();	//call the function from menu.cpp
 
 // TODO:
 // Bug in waitUnitil. it waits for the time from getElapsedTime to waitUntil, but should be insignificant.
@@ -17,6 +19,7 @@ void mainLoop();
 int main()
 {
 	init();      // initialize your variables
+	gameLoop();	 // menu loop
     mainLoop();  // main loop
     shutdown();  // do clean up, if any. free memory.
 	
