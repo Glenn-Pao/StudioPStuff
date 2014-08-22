@@ -3,6 +3,7 @@
 #include "Framework\timer.h"
 #include "game.h"
 #include "menu.h"
+#include "global.h"
 
 
 StopWatch g_timer;            // Timer function to keep track of time and the frame rate
@@ -22,6 +23,7 @@ int main()
 	gameLoop();	 // menu loop
     mainLoop();  // main loop
     shutdown();  // do clean up, if any. free memory.
+	
 	return 0;
 }
 
