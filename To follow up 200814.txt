@@ -1,5 +1,0 @@
-1) Separate Game UI, High Score and Game Logic in different .cpp and .h files
-
-2) Arrays, structs and pointers for a High Score remake
-
-*may want to include a global .h for files needed everywhere

@@ -1,0 +1,5 @@
+troll cat
+(1)Play Game
+(2)Rules of Game
+(3)Options
+(4)Quit Game
