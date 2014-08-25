@@ -536,7 +536,7 @@ void renderpaw (claw &enemy)
 		cout << "  * ";
 		gotoXY(enemy.loc1.X, enemy.loc1.Y + 1);
 		cout << "*   *";
-		gotoXY(enemy.loc1.X, enemy.loc1.Y+2);
+		gotoXY(enemy.loc1.X, enemy.loc1.Y + 2);
 		cout << "  * ";
 	}
 

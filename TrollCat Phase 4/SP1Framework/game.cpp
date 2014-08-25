@@ -6,6 +6,8 @@
 #include "Framework\timer.h"
 #include "menu.h"
 #include "global.h"
+#include "paw.h"
+#include "paw.cpp"
 
 //counters
 int counter = 0;
@@ -23,11 +25,13 @@ int counter12 = 0;
 
 //use debugging - breakpoints, search, watch your variables
 //call stack -> tells you functions used before app crash
-int life = 30;
+
 double elapsedTime;
 double deltaTime;
-bool keyPressed[K_COUNT];
+int life = 30;
 COORD charLocation;
+bool keyPressed[K_COUNT];
+
 COORD consoleSize;
 claw paw1;
 claw paw2;
@@ -36,6 +40,10 @@ claw paw4;
 tail tail1;
 tail tail2;
 
+
+void paw(int &count, int &count2, int &count3, claw &enemy);
+void renderpaw (claw &enemy);
+void damagepaw (claw &enemy);
 
 void init()
 {
@@ -65,7 +73,7 @@ void init()
 
 	tail1.loc2.X = 6;
 	tail1.loc2.Y = 2;
-	
+
 	tail2.loc1.X = 41;
 	tail2.loc1.Y = 18;
 
@@ -130,7 +138,7 @@ void update(double dt)
 	// Updating the location of the character based on the key press
 	//create the deadspace
 
-	
+
 
 	if (keyPressed[K_UP] && charLocation.Y > 0)
 	{
@@ -237,12 +245,12 @@ void update(double dt)
 		}
 	}
 
-	
+
 
 	//for the dynamic movement of tail1
 	if( ((tail1.loc1.Y - tail1.loc2.Y) != 18) && (tail1.loc1.X == tail1.loc2.X))
 	{
-		
+
 		tail1.loc1.Y++;
 	}
 	else if ( ((tail1.loc1.X - tail1.loc2.X) != 36) && (tail1.loc1.Y != tail1.loc2.Y))
@@ -286,8 +294,8 @@ void update(double dt)
 	damagepaw (paw3);
 	damagepaw (paw4);
 
-	
-	
+
+
 	paw(counter, counter2, counter3, paw1);
 	paw(counter4,counter5,counter6,paw2);
 	paw(counter7,counter8,counter9,paw3);
@@ -309,27 +317,27 @@ void render()
 	//render test screen code (not efficient at all)
 
 	//to change to txt file
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 7);
-			colour(0x0B);
-			cout << "  |\\___/|  " << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 6);
-			cout << " =) ^Y^ (=" << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 5);
-			cout << "  \\  ^  /" << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 4);
-			cout << "   )=*=(" << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 -3);
-			cout << "  /     \\ " << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 -2);
-			cout << "  |     |" << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 -1);
-			cout << " /| | | |\\ " << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 );
-			cout << " \\| | |_|/\\ " << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 + 1);
-			cout << " //_// ___/" << endl;
-			gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 + 2);
-			cout << "      \\_)" << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 7);
+	colour(0x0B);
+	cout << "  |\\___/|  " << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 6);
+	cout << " =) ^Y^ (=" << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 5);
+	cout << "  \\  ^  /" << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 - 4);
+	cout << "   )=*=(" << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 -3);
+	cout << "  /     \\ " << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 -2);
+	cout << "  |     |" << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 -1);
+	cout << " /| | | |\\ " << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 );
+	cout << " \\| | |_|/\\ " << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 + 1);
+	cout << " //_// ___/" << endl;
+	gotoXY(consoleSize.X / 2 - 8 ,consoleSize.Y / 2 + 2);
+	cout << "      \\_)" << endl;
 
 
 
@@ -360,289 +368,6 @@ void render()
 	renderpaw (paw4);
 }
 //may want to txt file
-void paw (int &count, int &count2, int &count3, claw &enemy)
-{
-	count += 1;
-	count2 += 1;
-	count3 += 1;
-	
-	if (elapsedTime <= 10)
-	{
-		if (count >= 18)
-		{
-			count -= 1000;
-			//small warning circle
-			enemy.loc1.X = rand() % 55 + 5;
-			enemy.loc1.Y = rand() % 18 + 5;
-		}
-
-		if (count2 >= 22)
-		{
-			count2 -= 1000;
-			//medium warning circle
-			enemy.loc2.X = enemy.loc1.X -2;
-			enemy.loc2.Y = enemy.loc1.Y;
-		}
-
-		if (count3 >= 26)
-		{
-			count = 0;
-			count2 = 0;
-			count3 = 0;
-			//cat paw does dmg
-			enemy.loc3.X = enemy.loc1.X - 3;
-			enemy.loc3.Y = enemy.loc1.Y - 1;
-		}
-	}
-
-	else if (elapsedTime <= 20)
-	{
-		if (count >= 15)
-		{
-			count -= 1000;
-			enemy.loc1.X = rand() % 55 + 5;
-			enemy.loc1.Y = rand() % 18 + 5;
-		}
-
-		if (count2 >= 19)
-		{
-			count2 -= 1000;
-			enemy.loc2.X = enemy.loc1.X -2;
-			enemy.loc2.Y = enemy.loc1.Y;
-		}
-
-		if (count3 >= 23)
-		{
-			count = 0;
-			count2 = 0;
-			count3 = 0;
-
-			enemy.loc3.X = enemy.loc1.X - 3;
-			enemy.loc3.Y = enemy.loc1.Y - 1;
-		}
-	}
-
-	else if (elapsedTime <= 30)
-	{
-		if (count >= 12)
-		{
-			count -= 1000;
-			enemy.loc1.X = rand() % 55 + 5;
-			enemy.loc1.Y = rand() % 18 + 5;
-		}
-
-		if (count2 >= 15)
-		{
-			count2 -= 1000;
-			enemy.loc2.X = enemy.loc1.X -2;
-			enemy.loc2.Y = enemy.loc1.Y;
-		}
-
-		if (count3 >= 18)
-		{
-			count = 0;
-			count2 = 0;
-			count3 = 0;
-			enemy.loc3.X = enemy.loc1.X - 3;
-			enemy.loc3.Y = enemy.loc1.Y - 1;
-		}
-	}
-
-	else if (elapsedTime <= 40)
-	{
-		if (count >= 9)
-		{
-			count -= 1000;
-			enemy.loc1.X = rand() % 55 + 5;
-			enemy.loc1.Y = rand() % 18 + 5;
-		}
-
-		if (count2 >= 12)
-		{
-			count2 -= 1000;
-			enemy.loc2.X = enemy.loc1.X -2;
-			enemy.loc2.Y = enemy.loc1.Y;
-		}
-
-		if (count3 >= 15)
-		{
-			count = 0;
-			count2 = 0;
-			count3 = 0;
-			enemy.loc3.X = enemy.loc1.X - 3;
-			enemy.loc3.Y = enemy.loc1.Y - 1;
-		}
-	}
-
-	else if (elapsedTime <= 50)
-	{
-		if (count >= 6)
-		{
-			count -= 1000;
-			enemy.loc1.X = rand() % 55 + 5;
-			enemy.loc1.Y = rand() % 18 + 5;
-		}
-
-		if (count2 >= 9)
-		{
-			count2 -= 1000;
-			enemy.loc2.X = enemy.loc1.X -2;
-			enemy.loc2.Y = enemy.loc1.Y;
-		}
-
-		if (count3 >= 12)
-		{
-			count = 0;
-			count2 = 0;
-			count3 = 0;
-			enemy.loc3.X = enemy.loc1.X - 3;
-			enemy.loc3.Y = enemy.loc1.Y - 1;
-		}
-	}
-
-	else if (elapsedTime <= 80)
-	{
-		if (count >= 3)
-		{
-			count -= 1000;
-			enemy.loc1.X = rand() % 55 + 5;
-			enemy.loc1.Y = rand() % 18 + 5;
-		}
-
-		if (count2 >= 5)
-		{
-			count2 -= 1000;
-			enemy.loc2.X = enemy.loc1.X -2;
-			enemy.loc2.Y = enemy.loc1.Y;
-		}
-
-		if (count3 >= 7)
-		{
-			count = 0;
-			count2 = 0;
-			count3 = 0;
-			enemy.loc3.X = enemy.loc1.X - 3;
-			enemy.loc3.Y = enemy.loc1.Y - 1;
-		}
-	}
-
-	else 
-	{
-		if (count >= 1)
-		{
-			count -= 1000;
-			enemy.loc1.X = rand() % 55 + 5;
-			enemy.loc1.Y = rand() % 18 + 5;
-		}
-
-		if (count2 >= 2)
-		{
-			count2 -= 1000;
-			enemy.loc2.X = enemy.loc1.X -2;
-			enemy.loc2.Y = enemy.loc1.Y;
-		}
-
-		if (count3 >= 4)
-		{
-			count = 0;
-			count2 = 0;
-			count3 = 0;
-			enemy.loc3.X = enemy.loc1.X - 3;
-			enemy.loc3.Y = enemy.loc1.Y - 1;
-		}
-	}
-
-
-
-
-}
-//to change to txt file..would be best..
-void renderpaw (claw &enemy)
-{
-	if (elapsedTime >= 4.5)
-	{
-
-		gotoXY(enemy.loc1.X, enemy.loc1.Y);
-		colour(0x0E);
-		cout << "  * ";
-		gotoXY(enemy.loc1.X, enemy.loc1.Y + 1);
-		cout << "*   *";
-		gotoXY(enemy.loc1.X, enemy.loc1.Y+2);
-		cout << "  * ";
-	}
-
-	if (elapsedTime >= 4.7)
-	{
-		gotoXY(enemy.loc2.X, enemy.loc2.Y);
-		colour(0x0E);
-		cout << "  *  *";
-		gotoXY(enemy.loc2.X, enemy.loc2.Y + 1);
-		cout << "*      *";
-		gotoXY(enemy.loc2.X, enemy.loc2.Y+2);
-		cout << "*      *";
-		gotoXY(enemy.loc2.X, enemy.loc2.Y+3);
-		cout << "  *  *";
-	}
-
-	if (elapsedTime >= 4.9)
-	{
-		gotoXY(enemy.loc3.X, enemy.loc3.Y);
-		colour(0x0E);
-		cout << "   h  h" ;
-		gotoXY(enemy.loc3.X, enemy.loc3.Y+1);
-		cout << " h(\")(\")h";
-		gotoXY(enemy.loc3.X, enemy.loc3.Y+2);
-		cout << "(\"),--.(\")";
-		gotoXY(enemy.loc3.X, enemy.loc3.Y+3);
-		cout << " :\"    \";";
-		gotoXY(enemy.loc3.X, enemy.loc3.Y+4);
-		cout << " `.____,'";
-	}
-}
-
-void damagepaw (claw &enemy)
-{
-	for (int i = 0; i < 5; ++i)
-	{
-		for (int j = 0; j < 10; ++j)
-		{
-			for (int k = 0; k < 2; ++k)
-			{
-				for (int l = 0; l < 3; ++l)
-				{
-
-					if ( (charLocation.X + l == enemy.loc3.X + j) && (charLocation.Y + k == enemy.loc3.Y + i) )
-					{
-						life--;
-					}
-
-					if (life == -1)
-					{
-						string gameover;
-
-						std::ifstream deadtext;
-						deadtext.open ("dead.txt");
-
-						while (!deadtext.eof())
-						{
-							getline(deadtext,gameover);
-							colour(0x0C);
-							cout << gameover << endl;
-						}
-
-
-						deadtext.close();
-						colour(0x06);
-
-
-						colour(0x0A);
-						exit(0); 
-					}
-				}
-			}
-		}
-	}
-}
 
 void damagetail (tail &enemy)
 {
