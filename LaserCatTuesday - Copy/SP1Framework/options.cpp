@@ -3,9 +3,12 @@
 #include "game.h"		//this is to provide the parameter to start/end game
 #include "Framework\console.h"
 #include "options.h"
+#include "highscores.h"
 
 void gameLoop();		//call from menu.cpp
 void Credits();			//call from credits.cpp
+void hardness();		//call from difficulty.cpp
+int load(string szFileName, highscore* pHS);
 
 void gameLoop2()
 {
@@ -34,13 +37,14 @@ void gameLoop2()
 		//bring to difficulty screen
 		if(input == difficulty)
 		{
-			//place difficulty codes here
+			hardness();
 			break;
 		}
 		//if the player presses 2...
+		//bring to highscores codes here
 		if(input == 2)
 		{
-			//place highscores codes here
+			//place highscore codes here
 			break;
 		}
 

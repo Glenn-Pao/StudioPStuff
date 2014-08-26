@@ -3,8 +3,10 @@
 #include "game.h"		//this is to provide the parameter to start/end game
 #include "Framework\console.h"
 
+
 void gameLoop2();
 void mainLoop();
+
 
 void gameLoop()
 {

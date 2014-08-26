@@ -76,19 +76,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="credits.cpp" />
+    <ClCompile Include="difficulty.cpp" />
     <ClCompile Include="Framework\console.cpp" />
     <ClCompile Include="Framework\timer.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="highscores.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="options.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="credits.h" />
+    <ClInclude Include="difficulty.h" />
     <ClInclude Include="Framework\console.h" />
     <ClInclude Include="Framework\timer.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="global.h" />
+    <ClInclude Include="highscores.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="options.h" />
   </ItemGroup>
