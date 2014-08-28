@@ -1,0 +1,59 @@
+Use the arrow keys to move your laser point.
+
+Collect power-ups to help you.
+ 
+Avoid the Cat's Paws and Tails! 
+
+Earn points by surviving as long as you can. Have fun! 
+
+
+       h  h               
+     h(")(")h                       *                 
+    ("),--.(")                    *   *
+     :"    ";                       *                           
+     `.____,'
+
+Cat's Paw (DANGER)       Paw Shadow (Small) (SAFE)
+
+
+          *  *                        ,-~-,
+        *      *                (\   / ,-, \
+        *      *                 \'-' /   \ \
+          *  *                    '--'
+
+Paw Shadow (Large) (SAFE)    Cat's Tail (DANGER)      
+
+
+	 |\___/|
+	=) ^Y^ (=
+ 	 \  ^  /
+  	  )=*=(
+ 	 /     \
+ 	 |     |
+	/| | | |\
+	\| | |_|/\
+	//_// ___/
+    	    \_)   
+ 
+	   Cat
+
+Touching a cat will force you towards a specific direction!
+
+
+
+             H    
++10 Health (Maximum 50 Health)
+
+             P
+Lets you walk through everything for 4 seconds (Still allows you to collect power-ups)    
+
+             X
+Your score will increase twice as fast for 3 seconds
+WARNING!!! Usage will immobolize your movements! 
+
+
+000
+000
+ ^ 
+ |
+You!
