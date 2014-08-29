@@ -1,0 +1,82 @@
+
+   _____  _______________  __  _____________________  _  ______
+  /  _/ |/ / __/_  __/ _ \/ / / / ___/_  __/  _/ __ \/ |/ / __/
+ _/ //    /\ \  / / / , _/ /_/ / /__  / / _/ // /_/ /    /\ \  
+/___/_/|_/___/ /_/ /_/|_|\____/\___/ /_/ /___/\____/_/|_/___/ 
+-------------------------------------------------------------------------------
+
+HOW-TO-PLAY:
+
+Use the arrow keys to move your laser point.
+
+Collect power-ups to help you.
+ 
+Avoid the Cat's Paws and Tails! 
+
+Earn points by surviving as long as you can.
+
+
+
+ENEMIES:
+
+       h  h               
+     h(")(")h                       *                 
+    ("),--.(")                    *   *
+     :"    ";                       *                           
+     `.____,'
+
+Cat's Paw (DANGER)       Paw Shadow (Small) (SAFE)
+
+
+          *  *                        ,-~-,
+        *      *                (\   / ,-, \
+        *      *                 \'-' /   \ \
+          *  *                    '--'
+
+Paw Shadow (Large) (SAFE)    Cat's Tail (DANGER)      
+
+
+	 |\___/|
+	=) ^Y^ (=
+ 	 \  ^  /
+  	  )=*=(
+ 	 /     \
+ 	 |     |
+	/| | | |\
+	\| | |_|/\
+	//_// ___/
+    	    \_)   
+ 
+	   Cat
+
+Touching a cat will force you towards a specific direction!
+
+
+
+POWER-UPS:
+
+             H    
++10 Health (Maximum 50 Health)
+
+             P
+Lets you walk through everything for 4 seconds (Still allows you to collect power-ups)    
+
+             X
+Your score will increase twice as fast for 3 seconds
+WARNING!!! Usage will immobilize your movements! 
+
+
+CHARACTER:
+
+000
+000
+ ^ 
+ |
+You!
+
+
+You are now ready to play Laser Cat! Have fun!
+
+Back to menu?
+1 ) Yes
+2 ) No
