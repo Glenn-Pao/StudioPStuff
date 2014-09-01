@@ -1,0 +1,98 @@
+   _____  _______________  __  _____________________  _  ______
+  /  _/ |/ / __/_  __/ _ \/ / / / ___/_  __/  _/ __ \/ |/ / __/
+ _/ //    /\ \  / / / , _/ /_/ / /__  / / _/ // /_/ /    /\ \  
+/___/_/|_/___/ /_/ /_/|_|\____/\___/ /_/ /___/\____/_/|_/___/ 
+_______________________________________________________________________________
+
+HOW-TO-PLAY:
+
+Use the arrow keys to move your laser point.
+
+Collect power-ups to help you.
+ 
+Avoid the Cat's Paws and Tails! 
+
+Earn points by surviving as long as you can.
+
+
+Tip: Press the ESC key during the game to return to the main menu.
+
+
+ENEMIES:
+
+       h  h               
+     h(")(")h                       *                 
+    ("),--.(")                    *   *
+     :"    ";                       *                           
+     `.____,'
+
+Cat's Paw (DANGER)       Paw Shadow (Small) (SAFE)
+
+
+          *  *                        ,-~-,
+        *      *                (\   / ,-, \
+        *      *                 \'-' /   \ \
+          *  *                    '--'
+
+Paw Shadow (Large) (SAFE)    Cat's Tail (DANGER)      
+
+
+	 |\___/|
+	=) ^Y^ (=
+ 	 \  ^  /
+  	  )=*=(
+ 	 /     \
+ 	 |     |
+	/| | | |\
+	\| | |_|/\
+	//_// ___/
+    	    \_)   
+ 
+	   Cat
+
+Touching a cat will force you towards a specific direction!
+
+
+
+POWER-UPS:
+
+Picking up power-ups will give you 5 bonus points and each 
+one will have their own unique effects!
+
+             H    
++10 Health (Maximum 50 Health)
+
+             P
+Lets you walk through everything for 4 seconds 
+(Still allows you to collect power-ups)    
+
+             X
+Your score will increase twice as fast for 3 seconds
+WARNING!!! Usage will immobolize your movements! 
+
+
+CHARACTER:
+
+000
+000
+ ^ 
+ |
+You!
+
+
+DIFFICULTY:
+
+You can select from 2 difficulties, easy and hard. 
+
+In easy mode, the game will very easy, but you will gain a lesser score. 
+This mode recommended for beginners to get a feel of the game.
+
+In hard mode, your score gain will increase, but so will the difficulty.
+If you're looking for a challenge, this is for you!
+
+
+You are now ready to play Laser Cat! Have fun!
+
+Back to menu?
+1 ) Yes
+2 ) No
